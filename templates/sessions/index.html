@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sessions</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/sessions/new">New session</a>
+</p>
+
+<ul>
+  {% for session in sessions %}
+  <li>
+  <p>{{ session.student.name }} - {{ session.yoga_class.name }} </p>
+  <p>"<i>{{session.booking_notes}}</i>"</p>
+    <p>
+      <form action="/sessions/{{ session.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

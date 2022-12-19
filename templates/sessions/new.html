@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Session</h1>
+
+<form action="/sessions" method="post">
+  <label for="student">Select a student:</label>
+    <select name="student_id" id="student">
+      {% for student in students %}
+      <option value="{{ student.id }}">{{ student.name }}</option>
+      {% endfor %}
+    </select>
+  
+  <label for="yoga_class">Select a yoga_class:</label>
+    <select name="yoga_class_id" id="yoga_class">
+      {% for yoga_class in yoga_classes %}
+      <option value="{{ yoga_class.id }}">{{ yoga_class.name }}</option>
+      {% endfor %}
+    </select>
+  
+
+  <label for="booking_notes">Add a Booking notes</label>
+  <textarea name="booking_notes" id="booking_notes" cols="30" rows="10"></textarea>
+  <input class="btn btn--action" type='submit' value="Session">
+</form>
+
+{% endblock %}
