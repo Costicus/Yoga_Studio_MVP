@@ -35,6 +35,17 @@ def select(id):
         student = Student(result['name'], result['id'] )
     return student
 
+def select_students_by_class(class_id):
+    students = []
+
+    sql = "SELECT * FROM sessions WHERE yoga_class_id = %s"
+    values = [class_id]
+    results = run_sql(sql, values)
+    for row in results:
+        student = select(row['student_id'])
+        students.append(student)
+    return students
+
 
 def delete_all():
     sql = "DELETE FROM students"

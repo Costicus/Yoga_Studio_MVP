@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.yoga_class import Yoga_class
 import repositories.yoga_class_repository as yoga_class_repository
+import repositories.student_repository as student_repository
 
 yoga_classes_blueprint = Blueprint("yoga-classes", __name__)
 
@@ -13,7 +14,8 @@ def yoga_classes():
 @yoga_classes_blueprint.route("/yoga_classes/<id>")
 def show(id):
     yoga_class = yoga_class_repository.select(id)
-    return render_template("yoga_classes/show.html", yoga_class = yoga_class)
+    students = student_repository.select_students_by_class(id)
+    return render_template("yoga_classes/show.html", yoga_class = yoga_class, students=students)
 
 @yoga_classes_blueprint.route("/yoga_classes/new")
 def new_yoga_class():

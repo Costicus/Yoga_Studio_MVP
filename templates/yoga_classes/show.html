@@ -6,6 +6,8 @@
 <p>Room: {{ yoga_class.room }}</p>
 
 <h3>Visited by:</h3>
-
+{% for student in students %}
+<p>{{ student.name }}</p>
+{% endfor %}
 
 {% endblock %}

@@ -26,7 +26,7 @@ def new_task():
 def create_task():
     student_id = request.form['student_id']
     yoga_class_id = request.form['yoga_class_id']
-    booking_notes = request.form['review']
+    booking_notes = request.form['booking_notes']
     student = student_repository.select(student_id)
     yoga_class = yoga_class_repository.select(yoga_class_id)
     session = Session(student, yoga_class, booking_notes)
