@@ -1,6 +1,6 @@
 class Yoga_class:
 
-    def __init__(self, name, style, id = None):
+    def __init__(self, name, room, id = None):
       self.name = name
-      self.style = style
+      self.room = room
       self.id = id

@@ -14,3 +14,14 @@ def yoga_classes():
 def show(id):
     yoga_class = yoga_class_repository.select(id)
     return render_template("yoga_classes/show.html", yoga_class = yoga_class)
+
+@yoga_classes_blueprint.route("/yoga_classes/new")
+def new_yoga_class():
+    return render_template("/yoga_classes/new.html")
+
+@yoga_classes_blueprint.route("/yoga_classes", methods=['POST'])
+def save_newclass():
+    yoga_class_name = request.form['name']
+    yoga_class_to_save = Yoga_class(yoga_class_name)
+    yoga_class_repository.save(yoga_class_to_save)
+    return redirect("/yoga_classes")

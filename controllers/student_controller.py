@@ -13,4 +13,16 @@ def students():
 @students_blueprint.route("/students/<id>")
 def show(id):
     student = student_repository.select(id)
-    return render_template("students/show.html", student = student)
+    # sessions = yoga_class_repository.get_by_student(student)
+    return render_template("students/show.html", student = student, yoga_classes = "")
+
+@students_blueprint.route("/students/new")
+def new_student():
+    return render_template("/students/new.html")
+
+@students_blueprint.route("/students", methods=['POST'])
+def save_newstudent():
+    student_name = request.form['name']
+    student_to_save = Student(student_name)
+    student_repository.save(student_to_save)
+    return redirect("/students")

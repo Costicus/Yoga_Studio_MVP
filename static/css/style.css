@@ -21,12 +21,12 @@ body {
   }
   
   a, a:link, a:visited {
-    color: #0094C6;
+    color: #018bb9;
     text-decoration: none;
   }
   
   a:hover, a:active, a:focus {
-    color: #8EE3EF;
+    color: #19bdd3;
   }
   
   nav {

@@ -1,7 +1,7 @@
 .btn {
     border:0px none;
-    padding: 4px 8px;
-    color: #FFFFFF;
+    padding: 2px 8px;
+    color: #030000;
     cursor:pointer;
   }
   
@@ -14,11 +14,11 @@
   }
   
   .btn--action:hover {
-    background-color: #ABC798;
+    background-color: #e8dc07;
   }
   
   .btn--action {
-    background-color: #ABC798;
+    background-color: #e8dc07;
   }
   
   .btn--wrapper {

@@ -6,14 +6,17 @@
 <table>
   <tr>
     <th>Name</th>
+    <p>
+      <a class="btn btn--action" href="/yoga_classes/new">Add a new yoga-class</a> 
+      </p>
     <th></th>
-    <th>Style</th>
+    <th>Room</th>
   </tr>
   {% for yoga_class in yoga_classes %}
   <tr>
     <td><a href="/yoga_classes/{{ yoga_class.id }}"> {{yoga_class.name}} </a></td>
     <td>|</td>
-    <td>{{ yoga_class.style }}</td>
+    <td>{{ yoga_class.room }}</td>
   </tr>
   {% endfor %}
 </table>

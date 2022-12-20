@@ -9,7 +9,7 @@ CREATE TABLE students (
 
 CREATE TABLE yoga_classes (
   id SERIAL PRIMARY KEY,
-  style VARCHAR(255),
+  room VARCHAR(255),
   name VARCHAR(255)
 );
 

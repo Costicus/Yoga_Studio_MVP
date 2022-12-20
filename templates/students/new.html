@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Student</h1>
+
+<form action="/students" method="post">
+    <label for="student">Add a student:</label>
+    <input type="text" name="name">
+    <input class="btn btn--danger" type='submit' >
+</form>
+{% endblock %}

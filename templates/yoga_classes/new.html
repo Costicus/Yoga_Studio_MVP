@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Yoga Class</h1>
+
+<form action="/yoga_classes" method="post">
+    <label for="yoga_class">Add a yoga class:</label>
+    <input type="text" name="name">
+    <input class="btn btn--danger" type='submit' >
+</form>
+{% endblock %}
